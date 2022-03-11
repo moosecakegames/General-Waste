@@ -1,0 +1,313 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KindredSDK
+import AudioToolbox
+import CommonCrypto
+import CoreTelephony
+import CryptoKit
+import FleksyApps
+import FleksyHelperSDK
+import FleksyKeyboardSDK
+import Foundation
+@_exported import KindredSDK
+import Security
+import Swift
+import UIKit
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class CoreSettings : ObjectiveC.NSObject {
+  public static let shared: KindredSDK.CoreSettings
+  public var sharedSettings: Foundation.UserDefaults
+  public func saveSetting(obj: Any, key: Swift.String)
+  public func getSetting(key: Swift.String, defaultValue: Swift.String? = nil) -> Swift.String
+  public func getSettingBool(key: Swift.String) -> Swift.Bool
+  public func getSettingBool(key: Swift.String, defaultValue: Swift.Bool) -> Swift.Bool
+  public func getSettingInt(key: Swift.String, defaultValue: Swift.Int) -> Swift.Int
+  public func getSettingArray(key: Swift.String) -> [Swift.String]
+  public func removeSettings(key: Swift.String)
+  public func setCoreAuthValues(clientId: Swift.String, clientSecret: Swift.String, sharedKey: Swift.String, apiUrl: Swift.String, cdnUrl: Swift.String)
+  public func getCoreAuthValues() throws -> KindredSDK.ClientAuth
+  public func setUserId(userId: Swift.String)
+  public func getUserId() throws -> Swift.String
+  public func saveRefreshToken(token: Swift.String)
+  public func getRefreshToken() -> Swift.String?
+  public func saveAccessToken(token: Swift.String)
+  public func getAccessToken() -> Swift.String
+  public func getUrlBase(path: Swift.String?) -> Swift.String
+  public func getCDNUrl(path: Swift.String?) -> Swift.String
+  public func getUserCurrency() -> Swift.String
+  public func getUserCountry() -> Swift.String
+  public func dealsSearchRequest() -> Swift.String
+  public func activateDealRequest() -> Swift.String
+  public func isSDKMode() -> Swift.Bool
+  public func getDeviceId() -> Swift.String?
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class PredictionsView : UIKit.UIView {
+  public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, textDocumentProxy: UIKit.UITextDocumentProxy)
+  public func initialise(_ hasFullAccess: Swift.Bool)
+  public func updatePredictions(_ arrayPredictions: [Swift.String], _ arrayTypes: [Swift.UInt32])
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+public func kkprint(_ items: Swift.String..., filename: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line, separator: Swift.String = " ", terminator: Swift.String = "\n")
+public func kkprint(_ items: Any..., separator: Swift.String = " ", terminator: Swift.String = "\n")
+@objc @_hasMissingDesignatedInitializers public class NoFullAccessView : UIKit.UIView {
+  @objc dynamic public init()
+  public func initialise()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class AnalyticsService {
+  public static let shared: KindredSDK.AnalyticsService
+  public func setLastActiveCheck(deviceId: Swift.String, complitionHandler: @escaping () -> Swift.Void)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class PredictionButton : UIKit.UIButton {
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+public struct Deal : Swift.Codable {
+  public var dealId: Swift.String
+  public var storeName: Swift.String
+  public var cashback: Swift.Float
+  public var cashbackType: Swift.String
+  public var currency: Swift.String?
+  public var isGive100: Swift.Bool
+  public var logo: Swift.String?
+  public var codes: [KindredSDK.CouponCodes]?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct CouponCodes : Swift.Codable {
+  public var code: Swift.String
+  public var summary: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension Deal {
+  public static func findDeals(for text: Swift.String) -> KindredSDK.Request<[KindredSDK.Deal]>
+}
+@objc public class KeyboardDisplayConfiguration : ObjectiveC.NSObject {
+  public init(cashbackLabel: Swift.String? = KeyboardDisplayConfiguration.cashbackLabelType(type: KeyboardDisplayConfiguration.CashbackLabel.CASHBACK), showWithdrawal: Swift.Bool? = false)
+  public enum CashbackLabel {
+    case CASHBACK
+    case DONATIONS
+    public static func == (a: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel, b: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func cashbackLabelType(type: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel) -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class DealsView : UIKit.UIScrollView {
+  final public let fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController!
+  public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, currentAppPackageName: Swift.String, showWithdrawal: Swift.Bool = false, withdrawalText: Swift.String? = nil)
+  public func setupConstraints()
+  public func updateDeals(text: Swift.String, couponView: UIKit.UIView?)
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class OneTimeLinkService {
+  public static let shared: KindredSDK.OneTimeLinkService
+  public func getOnetimeAuthenticationId(completionHandler: @escaping (Swift.String) -> Swift.Void)
+  @objc deinit
+}
+public struct DealClick : Swift.Decodable {
+  public var link: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+}
+extension DealClick {
+  public static func getDealResponse(for dealID: Swift.String, analytics: [Swift.String : Swift.String?]) -> KindredSDK.Request<KindredSDK.DealClick>
+}
+@objc public class UserConfiguration : ObjectiveC.NSObject {
+  public init(userCountry: Swift.String, userCurrency: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class KeyChain {
+  open var loggingEnabled: Swift.Bool
+  public static let shared: KindredSDK.KeyChain
+  open subscript(key: Swift.String) -> Swift.String? {
+    get
+    set
+  }
+  public func save(_ string: Swift.String?, forKey key: Swift.String)
+  public func load(withKey key: Swift.String) -> Swift.String?
+  public func keychainQuery(withKey key: Swift.String) -> Foundation.NSMutableDictionary
+  public func logPrint(_ items: Any...)
+  @objc deinit
+}
+public struct Charity : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+extension Charity {
+  public static func setCharity(for charityID: Swift.String, charityShare: Swift.Int) -> KindredSDK.Request<KindredSDK.Charity>
+}
+@objc public class CharityConfiguration : ObjectiveC.NSObject {
+  public init(charityId: Swift.String, charityShare: Swift.Int)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class CustomerKeyboardConfiguration : ObjectiveC.NSObject {
+  public init(core: KindredSDK.CoreConfiguration, display: KindredSDK.KeyboardDisplayConfiguration? = KeyboardDisplayConfiguration(), auth: KindredSDK.AuthConfiguration? = AuthConfiguration(), user: KindredSDK.UserConfiguration, charity: KindredSDK.CharityConfiguration? = nil)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class KMenuButton : UIKit.UIButton {
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class UserService {
+  public static let shared: KindredSDK.UserService
+  public func setDonationCharity(charityID: Swift.String, charityShare: Swift.Int, completionHandler: @escaping () -> Swift.Void)
+  @objc deinit
+}
+public class AuthConfiguration {
+  public init(authMode: Swift.Bool? = AuthConfiguration.authModeLabelType(type: AuthConfiguration.AuthMode.EXTERNAL))
+  public enum AuthMode {
+    case INTERNAL
+    case EXTERNAL
+    public static func == (a: KindredSDK.AuthConfiguration.AuthMode, b: KindredSDK.AuthConfiguration.AuthMode) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func authModeLabelType(type: KindredSDK.AuthConfiguration.AuthMode) -> Swift.Bool?
+  @objc deinit
+}
+public struct Request<Value> {
+}
+public struct ClientAuth : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class DealsService {
+  public static let shared: KindredSDK.DealsService
+  public func searchForDeals(searchTerm: Swift.String, completionHandler: @escaping ([KindredSDK.Deal]) -> Swift.Void)
+  public func getDealUniqueTrackingLink(params: KindredSDK.Request<KindredSDK.DealClick>, completionHandler: @escaping (KindredSDK.DealClick) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class Analytics {
+  public static let shared: KindredSDK.Analytics
+  final public func setLastActivityCheck()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class KeyboardSDKViewController : UIKit.UIViewController {
+  public var dealsView: KindredSDK.DealsView!
+  public var dealButton: KindredSDK.DealButton
+  public var kMenuButton: KindredSDK.KMenuButton!
+  public var noFullAccessView: KindredSDK.NoFullAccessView!
+  public var predictionButton: KindredSDK.PredictionButton!
+  public var predictionsView: KindredSDK.PredictionsView!
+  public func getDealsView() -> KindredSDK.DealsView
+  public func getDealButton() -> KindredSDK.DealButton
+  public func getKMenuButton() -> KindredSDK.KMenuButton
+  public func getNoFullAccessView() -> KindredSDK.NoFullAccessView
+  public func getPredictionButton() -> KindredSDK.PredictionButton
+  public func getPredictionsView() -> KindredSDK.PredictionsView
+  public func initFleksyInterfaceForDealsView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController) -> KindredSDK.DealsView
+  public func initFleksyInterfaceForPredictionView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, textProxy: UIKit.UITextDocumentProxy) -> KindredSDK.PredictionsView
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class KindredViewController : UIKit.UIInputViewController, FleksyKeyboardSDK.FKInterfaceInputViewControllerDelegate, UIKit.UIGestureRecognizerDelegate {
+  @objc open func addKeyboardViewController(_ currentKeyboardVC: UIKit.UIViewController)
+  @objc open func addDisplayedViewController(_ displayVC: UIKit.UIViewController & FleksyKeyboardSDK.FleksyThemeableUI)
+  @objc open func addExtensionsViewController(_ extensionsVC: UIKit.UIViewController)
+  @objc open func triggerOpenApp()
+  @objc open func eventBus(_ event: Swift.String, payload dictPayload: [Swift.AnyHashable : Any])
+  open func setUserId(userId: Swift.String)
+  @objc open func dataCollection(_ data: Swift.String)
+  @objc open func dismissKeyboardButton()
+  @objc open func changeKeyboardButton()
+  @objc override dynamic open func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc override dynamic open func loadView()
+  @objc override dynamic open func viewDidLoad()
+  @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override dynamic open func textWillChange(_ textInput: UIKit.UITextInput?)
+  @objc override dynamic open func textDidChange(_ textInput: UIKit.UITextInput?)
+  @objc override dynamic open func selectionDidChange(_ textInput: UIKit.UITextInput?)
+  @objc override dynamic open func selectionWillChange(_ textInput: UIKit.UITextInput?)
+  open func createConstraintsInputView(_ myself: KindredSDK.KindredViewController)
+  @objc override dynamic open func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc open func contextPropertiesChanged(_ properties: FleksyKeyboardSDK.KeyboardProperties)
+  open func initKeyboard()
+  @objc deinit
+  open func configureKeyboard() -> KindredSDK.CustomerKeyboardConfiguration
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class Colours : UIKit.UIColor {
+  public static let standardBackground: UIKit.UIColor
+  public static let loginButtonColour: UIKit.UIColor
+  public static let iconColor: UIKit.UIColor
+  public static let textColour: UIKit.UIColor
+  public static let highlightedDeal: UIKit.UIColor
+  public static let couponViewBackground: UIKit.UIColor
+  public static let couponTitle: UIKit.UIColor
+  public static let couponBorderColour: UIKit.UIColor
+  public static var textViewBackground: UIKit.UIColor
+  public static let warningColour: UIKit.UIColor
+  public static let loadingBackground: UIKit.UIColor
+  public static let textViewBorder: UIKit.UIColor
+  public static let withdrawalButtonColour: UIKit.UIColor
+  public static let lightGrey: UIKit.UIColor
+  public static let darkGrey: UIKit.UIColor
+  public static let justWhite: UIKit.UIColor
+  public static let justBlack: UIKit.UIColor
+  public static let transparent: UIKit.UIColor
+  public static let blueColour: UIKit.UIColor
+  @objc override dynamic public init(white: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
+  @objc override dynamic public init(hue: CoreGraphics.CGFloat, saturation: CoreGraphics.CGFloat, brightness: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
+  @objc override dynamic public init(red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
+  @available(iOS 10.0, *)
+  @objc override dynamic public init(displayP3Red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
+  @objc override dynamic public init(cgColor: CoreGraphics.CGColor)
+  @objc override dynamic public init(patternImage image: UIKit.UIImage)
+  @available(iOS 5.0, *)
+  @objc override dynamic public init(ciColor: CoreImage.CIColor)
+  @objc override dynamic public init()
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @available(iOS 13.0, *)
+  @objc override dynamic public init(dynamicProvider: @escaping (UIKit.UITraitCollection) -> UIKit.UIColor)
+  @objc deinit
+}
+infix operator | : AdditionPrecedence
+@objc public class CoreConfiguration : ObjectiveC.NSObject {
+  public init(clientId: Swift.String, clientSecret: Swift.String, sharedKey: Swift.String, apiUrl: Swift.String, cdnUrl: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class AuthenticationService {
+  public func authenticateSDK()
+  @objc deinit
+}
+public class Debouncer {
+  public init(delay: Foundation.TimeInterval)
+  public func run(action: @escaping () -> Swift.Void)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class DealButton : UIKit.UIButton {
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class KindredSettings : KindredSDK.CoreSettings {
+  public static let sharedSettings: KindredSDK.KindredSettings
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SettingsConfiguration : ObjectiveC.NSObject {
+  public static let shared: KindredSDK.SettingsConfiguration
+  public func initialise()
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension KindredSDK.KeyboardDisplayConfiguration.CashbackLabel : Swift.Equatable {}
+extension KindredSDK.KeyboardDisplayConfiguration.CashbackLabel : Swift.Hashable {}
+extension KindredSDK.AuthConfiguration.AuthMode : Swift.Equatable {}
+extension KindredSDK.AuthConfiguration.AuthMode : Swift.Hashable {}

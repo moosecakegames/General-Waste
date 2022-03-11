@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>AppGroupName</key>
+    <string>group.com.kindred.partnerskeyboard</string>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>$(DEVELOPMENT_LANGUAGE)</string>
+    <key>CFBundleDisplayName</key>
+    <string>New Unity Project (1)</string>
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundleIdentifier</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>$(PRODUCT_NAME)</string>
+    <key>CFBundlePackageType</key>
+    <string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>KindredKeyboard</key>
+    <dict>
+      <key>AuthClientId</key>
+      <string>506f377b-7760-488b-9e8b-139824555213</string>
+      <key>AuthClientSecret</key>
+      <string>ahdwKrgLcT2eTD+PWKQi6E6GWb8LffihL3OfM/9Xlcs=</string>
+      <key>AuthSharedKey</key>
+      <string>9RjijNDFP43fW9zvC9suqNGfjgkvRYyw5Nkgo00x84k=</string>
+      <key>BaseApiUrl</key>
+      <string>https://api-partners.kindred.co</string>
+      <key>CashbackLabelType</key>
+      <integer>0</integer>
+      <key>CDNUrl</key>
+      <string>https://cdn.kindred.co</string>
+      <key>CharityId</key>
+      <string>30886976850141ffbb8dfeac4787a365</string>
+      <key>CharityShare</key>
+      <integer>30</integer>
+      <key>ShowWithdrawal</key>
+      <true />
+      <key>UserCurrency</key>
+      <string>GBP</string>
+    </dict>
+    <key>NSExtension</key>
+    <dict>
+      <key>NSExtensionAttributes</key>
+      <dict>
+        <key>IsASCIICapable</key>
+        <false />
+        <key>PrefersRightToLeft</key>
+        <false />
+        <key>PrimaryLanguage</key>
+        <string>en-US</string>
+        <key>RequestsOpenAccess</key>
+        <true />
+      </dict>
+      <key>NSExtensionPointIdentifier</key>
+      <string>com.apple.keyboard-service</string>
+      <key>NSExtensionPrincipalClass</key>
+      <string>$(PRODUCT_MODULE_NAME).KeyboardViewController</string>
+    </dict>
+    <key>UIAppFonts</key>
+    <array>
+      <string>flicon.ttf</string>
+    </array>
+  </dict>
+</plist>

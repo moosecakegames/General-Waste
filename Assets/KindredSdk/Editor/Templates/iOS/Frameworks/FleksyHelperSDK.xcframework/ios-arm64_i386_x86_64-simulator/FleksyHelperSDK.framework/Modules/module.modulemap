@@ -1,0 +1,6 @@
+framework module FleksyHelperSDK {
+  umbrella header "FleksyHelperSDK.h"
+
+  export *
+  module * { export * }
+}

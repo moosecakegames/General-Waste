@@ -1,0 +1,16 @@
+{
+  "name": "co.kindred.sdk",
+  "version": "1.0.1",
+  "email": "sdk@kindredteam.com",
+  "website": "https://sdk.kindred.co",
+  "keywords": [
+    "kindred"
+  ],
+  "author": {
+    "name": "Kindred",
+    "email": "sdk@kindredteam.com",
+    "url": "https://sdk.kindred.co"
+  },
+  "displayName": "Kindred SDK",
+  "description": "Kindred SDK for iOS and Android."
+}

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ApplicationGroupContainerIdentifier</key>
+	<string>group.com.kindred.partnerskeyboard</string>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>FooterText</key>
+			<string>There&apos;s only 3 steps to start using the Kindred Keyboard
+1. Select &quot;Keyboards&quot;
+2. Turn on &quot;Kindred Keyboard&quot;
+3. Turn on &quot;Allow Full Access&quot;
+
+*If &quot;Keyboards&quot; does not appear on this screen:
+- If you have an iPhone 8 or earlier:
+Please double-click the Home button, swipe up the
+&quot;Settings&quot; and reopen &quot;Settings&quot; again. Then repeat the
+operations above.
+- If you have an iPhone X or later:
+Please swipe up from the bottom to the middle of your
+screen and swipe up the &quot;Settings&quot;. Reopen &quot;Settings&quot;
+again and then repeat the operations above.</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Keyboard Settings</string>
+		</dict>
+		<dict>
+			<key>TrueValue</key>
+			<true/>
+			<key>FalseValue</key>
+			<false/>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Auto Correction</string>
+			<key>Key</key>
+			<string>com.kindred.setting.userAutoCorrection</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Auto Capitalization</string>
+			<key>Key</key>
+			<string>com.kindred.setting.userAutoCapitalization</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Double Tap Period</string>
+			<key>Key</key>
+			<string>com.kindred.setting.doubleTapPeriods</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Show Word Predictions</string>
+			<key>Key</key>
+			<string>com.kindred.setting.showWordPredictions</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Autolearn From User</string>
+			<key>Key</key>
+			<string>com.kindred.settings.autolearnFromUser</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Emoji Suggestion</string>
+			<key>Key</key>
+			<string>com.kindred.settings.emojiSuggestion</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Emoji Prediction</string>
+			<key>Key</key>
+			<string>com.kindred.settings.emojiPrediction</string>
+		</dict>
+        <dict>
+            <key>DefaultValue</key>
+            <true/>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Typing Sounds</string>
+            <key>Key</key>
+            <string>com.kindred.settings.typingSounds</string>
+        </dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Swipe Typing</string>
+			<key>Key</key>
+			<string>com.kindred.settings.swipetyping</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<false/>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Underline Spell Check</string>
+			<key>Key</key>
+			<string>com.kindred.settings.underlineSpellCheck</string>
+		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>Title</key>
+            <string>Enabled Languages</string>
+        </dict>
+        <dict>
+            <key>DefaultValue</key>
+            <false/>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Arabic</string>
+            <key>Key</key>
+            <string>ar-AR</string>
+        </dict>
+        <dict>
+            <key>DefaultValue</key>
+            <true/>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>English (US)</string>
+            <key>Key</key>
+            <string>en-US</string>
+        </dict>
+        <dict>
+            <key>DefaultValue</key>
+            <false/>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>French (France)</string>
+            <key>Key</key>
+            <string>fr-FR</string>
+        </dict>
+        <dict>
+            <key>DefaultValue</key>
+            <false/>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Italian (Italy)</string>
+            <key>Key</key>
+            <string>it-IT</string>
+        </dict>
+        <dict>
+            <key>DefaultValue</key>
+            <false/>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Russian (Russia)</string>
+            <key>Key</key>
+            <string>ru-RU</string>
+        </dict>
+        <dict>
+            <key>DefaultValue</key>
+            <false/>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Spanish (Spain)</string>
+            <key>Key</key>
+            <string>es-ES</string>
+        </dict>
+	</array>
+</dict>
+</plist>

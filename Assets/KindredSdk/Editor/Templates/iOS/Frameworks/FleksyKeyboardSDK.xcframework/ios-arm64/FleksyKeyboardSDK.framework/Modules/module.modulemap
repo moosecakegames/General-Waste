@@ -1,0 +1,6 @@
+framework module FleksyKeyboardSDK {
+  umbrella header "FleksyKeyboardSDK.h"
+
+  export *
+  module * { export * }
+}

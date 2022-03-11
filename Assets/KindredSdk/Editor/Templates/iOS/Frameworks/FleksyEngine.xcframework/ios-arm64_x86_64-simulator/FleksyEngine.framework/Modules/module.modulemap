@@ -1,0 +1,6 @@
+framework module FleksyEngine {
+  umbrella header "FleksyEngine.h"
+
+  export *
+  module * { export * }
+}

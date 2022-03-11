@@ -1,0 +1,6 @@
+framework module FleksyApps {
+  umbrella header "FleksyApps.h"
+
+  export *
+  module * { export * }
+}

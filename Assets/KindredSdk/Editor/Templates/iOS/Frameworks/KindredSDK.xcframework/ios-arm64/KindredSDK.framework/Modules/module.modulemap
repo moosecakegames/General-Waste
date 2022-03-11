@@ -1,0 +1,11 @@
+framework module KindredSDK {
+  umbrella header "KindredSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module KindredSDK.Swift {
+    header "KindredSDK-Swift.h"
+    requires objc
+}

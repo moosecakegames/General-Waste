@@ -1,0 +1,63 @@
+GLOBAL PSPM {default}
+GLOBAL DELM {words}
+GLOBAL CAPM {sentences}
+GLOBAL TFT {regular}
+GLOBAL FA {nl}
+GLOBAL RESET_USER_DICT
+GLOBAL LANG en-US
+GLOBAL SETTING {"doubleSpaceTapAddsPunct":true}
+Test-layout-default
+>hellp
+SR(1)
+ET {Hello }
+SD(2)
+SR
+SD
+SD
+SD(4)
+MC 3
+SU(1)
+ET {Hello! }
+
+GLOBAL PSPM {default}
+GLOBAL DELM {words}
+GLOBAL CAPM {sentences}
+GLOBAL TFT {regular}
+GLOBAL FA {nl}
+GLOBAL RESET_USER_DICT
+GLOBAL LANG en-US QWERTZ
+GLOBAL SETTING {"doubleSpaceTapAddsPunct":true}
+Test-layout-default-existing-currentLayout
+>hellp
+SR(1)
+ET {Hello }
+SD(2)
+SR
+SD
+SD
+SD(4)
+MC 3
+SU(1)
+ET {Hello! }
+
+GLOBAL PSPM {default}
+GLOBAL DELM {words}
+GLOBAL CAPM {sentences}
+GLOBAL TFT {regular}
+GLOBAL FA {nl}
+GLOBAL RESET_USER_DICT
+GLOBAL LANG en-US FAILED
+GLOBAL SETTING {"doubleSpaceTapAddsPunct":true}
+Test-layout-default-non-existing-currentLayout
+>hellp
+SR(1)
+ET {Hello }
+SD(2)
+SR
+SD
+SD
+SD(4)
+MC 3
+SU(1)
+ET {Hello! }
+
