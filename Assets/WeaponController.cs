@@ -13,6 +13,9 @@ public class WeaponController : MonoBehaviour
     [SerializeField]
     private int curAmmo;
 
+    [SerializeField]
+    private float reloadTime;
+
     // Start is called before the first frame update
     void Start()
     {
